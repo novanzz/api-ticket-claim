@@ -31,7 +31,12 @@ class Ticket
 
     public function change_status($params = null)
     {
-        if ($params && !$params["event_id"] && !$params["ticket_code"] && !$params["status"]) {
+        if (
+            !$params["event_id"] ||
+            !$params["ticket_code"] ||
+            !$params["status"] ||
+            ($params["status"] && !CHOICES_STATUS[$params["status"]])
+        ) {
             response(400, null, MESSAGE_NOT_UPDATED);
         }
 

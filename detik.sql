@@ -40,8 +40,8 @@ CREATE TABLE `ticket` (
 -- Records of ticket
 -- ----------------------------
 BEGIN;
-INSERT INTO `ticket` (`id`, `ticket_code`, `status`, `event_id`, `updated_at`) VALUES (1, 'DTK01AHB89', 'claimed', 1, '2023-03-28 05:33:32');
-INSERT INTO `ticket` (`id`, `ticket_code`, `status`, `event_id`, `updated_at`) VALUES (2, 'DTK01AHB86', 'claimed', 1, '2023-03-28 20:59:30');
+INSERT INTO `ticket` (`id`, `ticket_code`, `status`, `event_id`, `updated_at`) VALUES (1, 'DTK01AHB89', 'available', 1, '2023-03-28 05:33:32');
+INSERT INTO `ticket` (`id`, `ticket_code`, `status`, `event_id`, `updated_at`) VALUES (2, 'DTK01AHB86', 'available', 1, '2023-03-28 20:59:30');
 COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;
