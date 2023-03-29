@@ -37,10 +37,9 @@ class Ticket
 
         $query_update =
             "UPDATE " . $this->table .
-            " SET status = :status, updated_at = :updated_at 
-            WHERE event_id = :event_id AND ticket_code = :ticket_code";
+            " SET status = :status, updated_at = '" . date("Y-m-d h:i:s") .
+            "' WHERE event_id = :event_id AND ticket_code = :ticket_code";
         $statement_update = $this->conn->prepare($query_update);
-        $statement_update->bindParam(':updated_at', date("Y-m-d h:i:s"));
         $statement_update->bindParam(':status', $params["status"], PDO::PARAM_STR);
         $statement_update->bindParam(':event_id', $params["event_id"], PDO::PARAM_INT);
         $statement_update->bindParam(':ticket_code', $params["ticket_code"], PDO::PARAM_STR);
