@@ -1,0 +1,99 @@
+{
+	"info": {
+		"_postman_id": "3e13a2e5-918d-4953-a814-eeb106303c49",
+		"name": "Detik",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5514861"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8085/api/ticket/update/?event_id=1&ticket_code=DTK01AHB89&status=claimed",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/api/ticket/update/?event_id=1&ticket_code=DTK01AHB89&status=claimed",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"api",
+						"ticket",
+						"update",
+						""
+					],
+					"query": [
+						{
+							"key": "event_id",
+							"value": "1"
+						},
+						{
+							"key": "ticket_code",
+							"value": "DTK01AHB89"
+						},
+						{
+							"key": "status",
+							"value": "claimed"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8085/api/ticket/detail/?event_id=1&status=claimed",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/api/ticket/detail/?event_id=1&status=claimed",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"api",
+						"ticket",
+						"detail",
+						""
+					],
+					"query": [
+						{
+							"key": "event_id",
+							"value": "1"
+						},
+						{
+							"key": "status",
+							"value": "claimed"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8085/api/ticket/detail/?event_id=1&status=claimed",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/api/ticket/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"api",
+						"ticket",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
