@@ -21,6 +21,14 @@ class Ticket
             $statement = $this->conn->prepare($query);
             $statement->bindParam(':status', $params["status"], PDO::PARAM_STR);
             $statement->bindParam(':event_id', $params["event_id"], PDO::PARAM_INT);
+        } else if (@$params["event_id"]) {
+            $query .= " WHERE event_id = :event_id";
+            $statement = $this->conn->prepare($query);
+            $statement->bindParam(':event_id', $params["event_id"], PDO::PARAM_INT);
+        } else if (@$params["status"]) {
+            $query .= " WHERE status = :status";
+            $statement = $this->conn->prepare($query);
+            $statement->bindParam(':status', $params["status"], PDO::PARAM_STR);
         } else {
             $statement = $this->conn->prepare($query);
         }
