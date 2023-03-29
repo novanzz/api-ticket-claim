@@ -16,7 +16,7 @@ class Ticket
     public function read($params = null)
     {
         $query = "SELECT * FROM " . $this->table;
-        if ($params["event_id"] && $params["status"]) {
+        if ($params && $params["event_id"] && $params["status"]) {
             $query .= " WHERE event_id = :event_id  AND status = :status";
             $statement = $this->conn->prepare($query);
             $statement->bindParam(':status', $params["status"], PDO::PARAM_STR);
@@ -31,7 +31,7 @@ class Ticket
 
     public function change_status($params = null)
     {
-        if (!$params["event_id"] && !$params["ticket_code"] && !$params["status"]) {
+        if ($params && !$params["event_id"] && !$params["ticket_code"] && !$params["status"]) {
             response(400, null, MESSAGE_NOT_UPDATED);
         }
 
